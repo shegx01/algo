@@ -35,4 +35,6 @@ defmodule Algorithms.Algo do
   defp list_reverse([h1, h2], rvsd), do: [h2, h1|rvsd]
   defp list_reverse([h1, h2|t], rvsd), do: list_reverse(t, [h2, h1|rvsd])
 
+  # https://www.hackerearth.com/practice/notes/dynamic-programming-i-1/
+
 end
