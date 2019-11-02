@@ -27,6 +27,12 @@ defmodule Algorithms.Algo do
   defp do_zip([h1 | t1], [h2 | t2]), do: [{h1, h2} | do_zip(t1, t2)]
   defp do_zip(_, _), do: []
 
-  def unzip([]), do: {[], []}
-  # def unzip([{a, b}|t]), do:
+  # reverse a linked list
+  @spec reverse(List.t) :: List.t
+  def reverse(list) when is_list(list), do: list_reverse(list, [])
+  defp list_reverse([], rvsd), do: rvsd
+  defp list_reverse([l], rvsd), do: [l|rvsd]
+  defp list_reverse([h1, h2], rvsd), do: [h2, h1|rvsd]
+  defp list_reverse([h1, h2|t], rvsd), do: list_reverse(t, [h2, h1|rvsd])
+
 end
